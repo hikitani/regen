@@ -62,8 +62,14 @@ func main() {
 	quantifierUpperBound := flag.Int("quantifier-upper-bound", 10, "Set an upper bound for all quantifiers +, * and {n,}")
 	textNum := flag.Int("num", 1, "Set the number of generated rows that match the regex")
 	outputType := flag.String("format", "plain", "Set the output format of the generated data (plain or json)")
+	printVersion := flag.Bool("version", false, "Print version")
 
 	flag.Parse()
+
+	if *printVersion {
+		fmt.Println("regen-0.0.1")
+		os.Exit(0)
+	}
 
 	if *quantifierUpperBound < 0 {
 		log.Fatal("Invalid -quantifier-upper-bound: must be positive")
