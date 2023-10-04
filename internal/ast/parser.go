@@ -28,8 +28,7 @@ var lexdef = lexer.MustStateful(lexer.Rules{
 		{"MetaChar", `\.|\\s|\\S|\\d|\\D|\\w|\\W|\\v`, nil},
 	},
 	"Escaped": {
-		{"EscapedChar", "[" + strings.Join(escapableChars, "") + `\ ` + "]", nil},
-		lexer.Return(),
+		{"EscapedChar", "[" + strings.Join(escapableChars, "") + `\ ` + "]", lexer.Pop()},
 	},
 	"CharClass": {
 		{"CharClassRange", `.-\\.|\\.-\\.|.-[^\]]|\\.-[^\]]`, nil},
