@@ -1,6 +1,6 @@
 module github.com/hikitani/regen
 
-go 1.21.0
+go 1.21
 
 retract v0.0.1
 
