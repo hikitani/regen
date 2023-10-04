@@ -67,7 +67,7 @@ func main() {
 	flag.Parse()
 
 	if *printVersion {
-		fmt.Println("regen-0.0.1")
+		fmt.Println("regen-0.0.3")
 		os.Exit(0)
 	}
 
